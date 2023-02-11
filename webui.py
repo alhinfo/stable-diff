@@ -32,7 +32,7 @@ import modules.ui
 from modules import modelloader
 from modules.shared import cmd_opts
 import modules.hypernetworks.hypernetwork
-
+from bot import *
 
 if cmd_opts.server_name:
     server_name = cmd_opts.server_name
@@ -164,6 +164,7 @@ def webui():
 
         if launch_api:
             create_api(app)
+            start()
 
         modules.script_callbacks.app_started_callback(shared.demo, app)
         modules.script_callbacks.app_started_callback(shared.demo, app)
